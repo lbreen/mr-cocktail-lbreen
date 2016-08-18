@@ -28,12 +28,12 @@ end
     })
 end
 
-5.times do
+20.times do
   i = rand(0..9)
   c = rand(0..4)
   Dose.create({
     cocktail: cocktails[c],
     ingredient: ingredient_instances[i],
-    description: "#{i}cl"
+    description: "#{i+1}cl"
     })
 end
