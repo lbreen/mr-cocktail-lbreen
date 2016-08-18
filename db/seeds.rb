@@ -33,6 +33,7 @@ end
   c = rand(0..4)
   Dose.create({
     cocktail: cocktails[c],
-    ingredient: ingredient_instances[i]
+    ingredient: ingredient_instances[i],
+    description: "#{i}cl"
     })
 end
