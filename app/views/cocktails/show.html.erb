@@ -1,0 +1,13 @@
+<h1><% @cocktail.name %></h1>
+
+<h2>Recipe</h2>
+
+<ul>
+  <% @cocktail.doses.each do |dose|%>
+    <% if dose.description.nil? || dose.ingredient.nil? %>
+
+    <% else %>
+      <li><%= dose.description%> of <%= dose.ingredient.name %></li>
+    <% end %>
+  <% end %>
+</ul>

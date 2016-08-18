@@ -1,0 +1,14 @@
+<h1>Our cocktails</h1>
+
+<% @cocktails.each do |cocktail| %>
+  <h2><%= link_to "#{cocktail.name}", cocktail_path(cocktail.id) %></h2>
+  <ul>
+    <% cocktail.doses.each do |dose|%>
+      <% if dose.description.nil? || dose.ingredient.nil? %>
+
+      <% else %>
+        <li><%= dose.description%> of <%= dose.ingredient.name %></li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
