@@ -2,12 +2,17 @@
 
 <h2>Recipe</h2>
 
+<%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail) %>
+
 <ul>
   <% @cocktail.doses.each do |dose|%>
     <% if dose.description.nil? || dose.ingredient.nil? %>
 
     <% else %>
-      <li><%= dose.description%> of <%= dose.ingredient.name %></li>
+      <li>
+      <%= dose.description%> of <%= dose.ingredient.name %> <%= link_to "Delete ingredient", cocktail_dose_path(dose.cocktail, dose), method: :delete, data: { confirm: "Are you sure?" } %>
+      </li>
     <% end %>
   <% end %>
 </ul>
+
