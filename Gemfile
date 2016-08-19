@@ -62,3 +62,6 @@ gem 'rspec-rails', group: [ :test ]
 gem "cloudinary", "1.1.0"
 gem "attachinary", github: "assembler/attachinary"
 gem "jquery-fileupload-rails"
+
+# API Key security
+gem 'figaro'
