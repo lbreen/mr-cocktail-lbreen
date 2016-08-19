@@ -1,1 +1,17 @@
 // Your footer style
+
+.footer {
+  background-color: $gray;
+  height: 100px;
+  a {
+    margin-left: 15px;
+  }
+}
+
+.share-links {
+  text-decoration: none;
+  color: $gray-dark;
+  :hover {
+    color: $gray-darker;
+  }
+}
