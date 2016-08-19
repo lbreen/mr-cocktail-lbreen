@@ -1,47 +1,92 @@
-.card {
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  color: white;
-  position: relative;
-  background-size: cover;
+.product {
+  display: flex;
+  align-items: center;
+  padding: 20px;
   border-radius: 5px;
-  margin: 20px 0;
-  padding: 5px;
-}
-.card-user {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-}
-.card-category {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 10px;
-  text-transform: uppercase;
-}
-.card-description {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-}
-.card-description h2 {
-  font-size: 24px;
-  z-index: 3;
-}
-.card-description p {
-  font-size: 13px;
+  transition: all 0.15s ease;
+  img {
+    border-radius: 5px;
   }
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  text-decoration: none;
-  background: black;
-  z-index: 2;
-  opacity: 0;
 }
-.card-link:hover{
-  opacity: 0.2;
+
+/* Body design */
+.product-body {
+  flex: 1 1 auto;
+  margin-left: 10px;
 }
+.product-body h3 {
+  font-weight: bold;
+  font-size: 23px;
+  margin-top: 0;
+}
+.product-body p {
+  font-weight: lighter;
+  color: #999999;
+  margin-bottom: 0;
+}
+
+/* Product image */
+.product-image {
+  border-radius: 10px;
+  margin-right: 20px;
+  width: 175px;
+}
+
+/* Upvote design */
+.product-upvote {
+  padding-right: 20px;
+  text-align: center;
+  transition: all 0.15s ease;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 20px;
+}
+.product-count {
+  margin: 2px 0 0;
+}
+.product-arrow {
+  transition: all 0.15s ease;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid transparent;
+  border-bottom: 9px solid black;
+  border-radius: 2px;
+  margin: auto;
+}
+
+/* Controls design */
+.product-controls {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0px;
+}
+.product-controls a {
+  padding: 0 20px;
+  font-size: 17px;
+  color: $gray-light;
+}
+.product-controls a:hover {
+  color: #D3473C !important
+}
+.product-controls-hidden a {
+  color: transparent;
+  font-size: 15px;
+  transition: all 0.15s ease;
+  border-color: transparent;
+}
+
+/* Hover effects */
+.product:hover {
+  background: $gray-lighter;
+  cursor: pointer;
+}
+.product-upvote:hover {
+  color: #5898f1;
+  cursor: pointer;
+}
+.product:hover .product-upvote { transform: scale(1.2) }
+.product:hover .product-controls-hidden a { color: #E6E6E6 }
+.product-upvote:hover .product-arrow { border-bottom: 9px solid #5898f1 }
