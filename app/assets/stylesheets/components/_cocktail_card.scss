@@ -1,0 +1,22 @@
+.cocktail-card {
+  display: flex;
+  align-items: center;
+  background-color: #F4F4F4;
+  border-radius: 5px;
+  padding: 80px 20px;
+
+}
+
+.cocktail-photo{
+  flex: 0 0 auto;
+  background-color: white;
+}
+
+.cocktail-info {
+  flex: 1 1 auto;
+  margin-left: 20px;
+}
+
+.wrapper {
+  background-color: #F4F4F4;
+}
