@@ -3,6 +3,7 @@ class CocktailsController < ApplicationController
   before_action :find_cocktail, only: [:show]
 
   def index
+    @page_name = "Mr. Cocktails"
     @cocktails = Cocktail.all
   end
   def show
