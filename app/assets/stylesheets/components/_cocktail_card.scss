@@ -4,7 +4,6 @@
   background-color: #F4F4F4;
   border-radius: 5px;
   padding: 80px 20px;
-
 }
 
 .cocktail-photo{
@@ -19,4 +18,30 @@
 
 .wrapper {
   background-color: #F4F4F4;
+  padding: 30px 0;
+}
+
+.recipe-name {
+  margin: 50px 0;
+  h2 {
+    margin-bottom: 50px;
+  }
+}
+
+.ingredient-card {
+  background-color: white;
+  padding: 20px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+.ingredient-name {
+  flex: 0 0 auto;
+}
+
+.ingredient-delete {
+  flex: 0 0 auto;
 }

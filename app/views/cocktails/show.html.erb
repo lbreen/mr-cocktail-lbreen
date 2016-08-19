@@ -1,22 +1,62 @@
-<h1><%= @cocktail.name %></h1>
+<% @page_name = @cocktail.name %>
+<% @banner_photo = 'summer_cocktails.jpg' %>
+<%= render 'shared/banner' %>
 
-<% if @cocktail.photo? %>
-  <%= cl_image_tag @cocktail.photo.path, width: 200, height: 300, crop: :fill %>
-<% end %>
+<div class="container padded">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <div class="cocktail-card">
+        <div class="cocktail-photo avatar-large">
+          <% if @cocktail.photo? %>
+            <%= cl_image_tag @cocktail.photo.path, crop: :fill, class: "cocktail-photo avatar-large" %>
+          <% else %>
+            <%= image_tag ('stock_cocktail.png'), class: "cocktail-photo avatar-large" %>
+          <% end %>
+        </div>
+        <div class="cocktail-info">
+          <h1><%= @cocktail.name %></h1>
+          <p>Difficulty: </p>
+          <p>Time: </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h2>Recipe</h2>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 text-center">
+        <div class="recipe-name">
+          <h2>Recipe</h2>
+          <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <% @cocktail.doses.each do |dose|%>
+        <% if dose.description.nil? || dose.ingredient.nil? %>
 
-<%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail) %>
+        <% else %>
+          <div class="col-xs-12 col-sm-6 col-sm-3">
+            <div class="ingredient-card">
 
-<ul>
-  <% @cocktail.doses.each do |dose|%>
-    <% if dose.description.nil? || dose.ingredient.nil? %>
 
-    <% else %>
-      <li>
-      <%= dose.description%> of <%= dose.ingredient.name %> <%= link_to "Delete ingredient", cocktail_dose_path(dose.cocktail, dose), method: :delete, data: { confirm: "Are you sure?" } %>
-      </li>
-    <% end %>
-  <% end %>
-</ul>
+
+              <div class="ingredient-name">
+                <%= dose.description%> of <%= dose.ingredient.name %>
+              </div>
+              <div class="ingredient-delete">
+                <%= link_to "Delete ingredient", cocktail_dose_path(dose.cocktail, dose), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
 
