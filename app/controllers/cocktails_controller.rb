@@ -1,6 +1,6 @@
 class CocktailsController < ApplicationController
 
-  before_action :find_cocktail, only: [:show]
+  before_action :find_cocktail, only: [:show, :upvote]
 
   def index
     @page_name = "Mr. Cocktails"
@@ -19,6 +19,11 @@ class CocktailsController < ApplicationController
       render :new
     end
   end
+  def upvote
+    @cocktail.rating += 1
+    @cocktail.save
+    redirect_to cocktails_path
+  end
 
   private
 
@@ -27,6 +32,6 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :photo)
+    params.require(:cocktail).permit(:name, :photo, :rating)
   end
 end
