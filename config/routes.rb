@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
 
   resources :cocktails, only: [:index, :show, :new, :create] do
+    member do
+      patch "upvote", to: "cocktails#upvote"
+    end
     resources :doses, only: [:new, :create, :destroy]
   end
 
