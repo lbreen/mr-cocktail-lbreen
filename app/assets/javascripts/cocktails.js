@@ -5,7 +5,7 @@
 
 //     var rating = $('.product-count');
 
-//     console.log(rating);
+//     console.log(event);
 
 
 
