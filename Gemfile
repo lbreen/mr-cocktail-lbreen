@@ -67,3 +67,5 @@ gem "jquery-fileupload-rails"
 
 # API Key security
 gem 'figaro'
+
+gem "nokogiri", ">= 1.13.4"
