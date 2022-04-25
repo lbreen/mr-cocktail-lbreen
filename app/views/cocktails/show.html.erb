@@ -7,7 +7,7 @@
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
       <div class="cocktail-card">
         <div class="cocktail-photo avatar-large">
-          <% if @cocktail.photo? %>
+          <% if @cocktail.photo.attached? %>
             <%= cl_image_tag @cocktail.photo.path, crop: :fill, class: "cocktail-photo avatar-large" %>
           <% else %>
             <%= image_tag ('stock_cocktail.png'), class: "cocktail-photo avatar-large" %>
