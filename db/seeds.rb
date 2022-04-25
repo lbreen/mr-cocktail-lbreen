@@ -7,19 +7,27 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-Cocktail.destroy_all
-Ingredient.destroy_all
+puts "Starting db seed process"
+
+puts "Destroy previous records"
 Dose.destroy_all
+Ingredient.destroy_all
+Cocktail.destroy_all
+
+puts "Initialise variables"
 
 cocktails = []
 ingredients = %w(vodka whiskey rum ice lemon tonic mint lime vermouth coke)
 ingredient_instances = []
 
+puts "Seed cocktails"
 5.times do
   cocktails << Cocktail.create({
     name: Faker::Beer.name
     })
 end
+
+puts "Seed ingredients"
 
 10.times do
   i = rand(0..9)
@@ -27,6 +35,8 @@ end
     name: ingredients[i]
     })
 end
+
+puts "Seed doses"
 
 20.times do
   i = rand(0..9)
@@ -37,3 +47,5 @@ end
     description: "#{i+1}cl"
     })
 end
+
+puts "DB seeding complete"
