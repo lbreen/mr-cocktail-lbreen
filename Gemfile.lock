@@ -1,11 +1,3 @@
-GIT
-  remote: https://github.com/assembler/attachinary.git
-  revision: 98a895be22edc74b1928ffa3ae116d24bd9818fd
-  specs:
-    attachinary (1.3.1)
-      cloudinary (~> 1.1.0)
-      rails (>= 3.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -89,9 +81,9 @@ GEM
       sassc (>= 2.0.0)
     builder (3.2.4)
     byebug (11.1.3)
-    cloudinary (1.1.0)
+    cloudinary (1.23.0)
       aws_cf_signer
-      rest-client
+      rest-client (>= 2.0.0)
     coderay (1.1.3)
     coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
@@ -107,6 +99,10 @@ GEM
     digest (3.1.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.8.1)
     faker (2.20.0)
@@ -278,14 +274,14 @@ PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
-  attachinary!
   autoprefixer-rails
   better_errors
   binding_of_caller
   bootstrap-sass
   byebug
-  cloudinary (= 1.1.0)
+  cloudinary
   coffee-rails (>= 4.2)
+  dotenv-rails
   faker
   figaro
   font-awesome-sass

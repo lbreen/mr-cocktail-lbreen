@@ -45,6 +45,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -61,8 +62,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rspec-rails', group: [ :test ]
 
 # Image uploader
-gem "cloudinary", "1.1.0"
-gem "attachinary", github: "assembler/attachinary"
+gem "cloudinary"
 gem "jquery-fileupload-rails"
 
 # API Key security
